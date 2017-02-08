@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>单书介绍</title>
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+</head>
+<body>
+<!-- head -->
+    <header class="clearfix">
+	    <span class="back"><a onclick="javascript:history.go(-1);"><img src="/static/img/back.png"></a></span>
+	    {{ book.title }}
+        <span class="home"><a href="/"><img src="/static/img/home.png"></a></span>
+    </header>
+<!-- 列表 -->
+	<div class="content">
+		<div class="book clearfix bt1">
+			<div class="pic">
+				<img src="{{ book.avatar_url }}">
+			</div>
+			<div class="summury booksummury">
+				<h3 class="clearfix">{{ book.title }}</h3>
+				<p>作者：{{ book.author }}</p>
+				<p>类别：{{ book.category }}</p>
+				<p class="latest">最新：<span>{{ latest_chapter.title }}</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="about">
+		<h3>本书简介</h3>
+		<p>{{ book.info }}</p>
+	</div>
+<!-- banner -->
+    <div class="banner mt0">
+    	<ul class="pic clearfix">
+    		<li></li>
+    	</ul>
+    </div>
+<!-- chapters -->
+	<div class="chapters">
+		<ul class="newC">
+			<li>最新章节</li>
+    		<li><a href="/book/{{ book.id }}/chapter/{{ latest_chapter.id }}/">{{ latest_chapter.title }}</a></li>
+		</ul>
+
+		<ul class="allC">
+			<li>章节目录</li>
+            {% for chapter in chapters %}
+    		    <li><a href="/book/{{ book.id }}/chapter/{{ chapter.id }}/">{{ chapter.title }}</a></li>
+            {% endfor %}
+		</ul>
+	</div>
+    <!-- 翻页 -->
+	<p class="whichPage">第<span class="curPage">{{ page }}</span> / <span>{{ page_count }}</span>页</p>
+	<ul class="clearfix pager">
+        {% if prev_page %}
+		    <li class="pre"><a href="/book/{{ book.id }}/?page={{ prev_page }}">上一页</a></li>
+		{% endif %}
+        {% if next_page %}
+            <li class="next"><a href="/book/{{ book.id }}/?page={{ next_page }}">下一页</a></li>
+		{% endif %}
+        <li class="last"><a href="/book/{{ book.id }}/?page={{ page_count }}">尾页</a></li>
+		<li class="jumpto clearfix">
+            <form method="get" action="/book/{{ book.id }}/">
+                <input type="text" name="page"><span><button>跳转</button></span>
+            </form>
+        </li>
+	</ul>
+    <!-- banner2 -->
+    <div class="banner banner2 mt0">
+    	<ul class="pic clearfix">
+    		<li></li>
+    	</ul>
+    </div>
+<!-- foot -->
+	<footer>
+		<div>
+			<a href="/">网站首页</a> |
+            <a href="javascript:scroll(0,0)">返回顶部</a>
+		</div>
+		<p>免费小说大全 - 精选网络各类免费小说</p>
+	</footer>
+</body>
+</html>

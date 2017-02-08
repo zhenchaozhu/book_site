@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>小说首页</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    </head>
+	<body>
+		<!-- head -->
+		<header>免费小说大全</header>
+		<nav class="clearfix">
+			{% for category in category_list %}
+				<span><a href="/book/category/{{ category.id }}/" class="">{{ category.name }}</a></span>
+			{% endfor %}
+		</nav>
+		<div class="search1 clearfix">
+            <form method="get" action="/book/search/">
+                <input type="text" placeholder="搜索书名，不少于4个字" name="query">
+                <button><span>搜索</span></button>
+            </form>
+		</div>
+	    <!-- banner -->
+		<div class="banner">
+			<ul class="pic clearfix">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="subnav clearfix">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		{% for recommend_book in recommend_books %}
+			<div class="content">
+				<div class="title clearfix">
+					<span>{{ recommend_book.0 }}</span>
+					<a href="/book/category/{{ recommend_book.1 }}/">更多 ></a>
+				</div>
+
+                {% for book in recommend_book.2 %}
+                    {% if forloop.counter == 1 %}
+                        <div class="book clearfix">
+                            <div class="pic">
+                                <img src={{ book.avatar_url }}>
+                            </div>
+                            <div class="summury">
+                                <h3><a href="/book/{{ book.id }}/">{{ book.title }}</a></h3>
+                                <p>{{ book.info }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+                <ul class="recommendBooks">
+                    {% for book in recommend_book.2 %}
+                        {% if forloop.counter != 1 %}
+                            <li><a href="/book/{{ book.id }}/">{{ book.title }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+			<div class="sepretor"></div>
+		{% endfor %}
+		<!-- foot -->
+		<footer>
+			<div>
+				<a href="/">网站首页</a> |
+                <a href="javascript:scroll(0,0)">返回顶部</a>
+			</div>
+			<p>免费小说大全 - 精选网络各类免费小说</p>
+		</footer>
+		<!-- 悬浮广告 -->
+		<div class="floatPic"><span>X</span></div>
+	</body>
+</html>

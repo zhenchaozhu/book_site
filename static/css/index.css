@@ -1,0 +1,596 @@
+@charset 'UTF-8';
+header
+{
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 80px;
+
+    width: 92%;
+    height: 80px;
+    padding: 0 4%;
+
+    text-align: center;
+
+    color: #fff;
+    background-color: #129fe5;
+}
+nav
+{
+    width: 92%;
+    padding: 0 4%;
+}
+nav span a
+{
+    font-size: 30px;
+
+    margin-right: 108px;
+    padding-bottom: 5px;
+}
+nav span
+{
+    float: left;
+
+    margin: 20px 0;
+    margin-left: 60px;
+}
+nav a.active
+{
+    color: #129fe5;
+    border-bottom: 4px solid #129fe5;
+}
+nav a.lastcol
+{
+    margin-right: 0;
+}
+.search1
+{
+    width: 92%;
+    padding: 0 4%;
+}
+.search1 input
+{
+    font-size: 28px;
+
+    float: left;
+
+    width: 84%;
+    height: 46px;
+    padding: 16px;
+
+    color: #ccc;
+    border: solid 1px #ccc;
+}
+.search1 span
+{
+    font-size: 28px;
+
+    float: left;
+
+    height: 46px;
+    padding: 16px 25px;
+
+    color: #fff;
+    background-color: #129fe5;
+}
+/*banner*/
+.banner
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 208px;
+    margin-top: 30px;
+}
+.banner .pic
+{
+    width: 300%;
+    height: 100%;
+}
+.banner .pic li
+{
+    float: left;
+
+    width: 33.333333333%;
+    height: 100%;
+
+    background: #7ed39c url(../img/banner.jpg) center center no-repeat;
+    background-size: 100%;
+}
+.subnav
+{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.subnav li
+{
+    float: left;
+
+    width: 14px;
+    height: 14px;
+    margin-right: 20px;
+
+    border-radius: 50%;
+    background-color: #ccc;
+}
+.subnav li.current
+{
+    background-color: #129fe5;
+}
+/*男频*/
+.content
+{
+    width: 92%;
+    margin-top: 40px;
+    padding: 0 4%;
+}
+.content .title
+{
+    height: 40px;
+}
+.content .title span
+{
+    font-size: 30px;
+    line-height: 34px;
+
+    height: 34px;
+    padding-left: 12px;
+
+    color: #333;
+    border-left: solid 6px #129fe5;
+}
+.content .title a
+{
+    font-size: 22px;
+
+    float: right;
+
+    width: 68px;
+
+    color: #ccc;
+}
+.content .book
+{
+    margin: 40px 0;
+}
+.content .book .pic
+{
+    float: left;
+
+    width: 136px;
+    height: 176px;
+
+    border: solid 1px #ccc;
+    background-color: #7ed39c;
+}
+.content .book .summury
+{
+    float: right;
+    overflow: hidden;
+
+    width: 82%;
+    height: 176px;
+}
+.content .book .summury h3
+{
+    font-size: 28px;
+
+    margin-bottom: 12px;
+
+    color: #333;
+}
+.content .book .summury p
+{
+    font-size: 24px;
+    line-height: 42px;
+    /*display:block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;*/
+
+    display: -webkit-box;
+    overflow: hidden;
+
+    height: 126px;
+
+    letter-spacing: -1px;
+
+    color: #666;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.content .recommendBooks
+{
+    margin-top: 40px;
+}
+.content .recommendBooks li
+{
+    font-size: 28px;
+    line-height: 90px;
+
+    height: 90px;
+    padding-left: 10px;
+
+    color: #333;
+    border-top: solid 1px #ccc;
+}
+.sepretor
+{
+    width: 100%;
+    height: 20px;
+
+    background-color: #f7f7f7;
+}
+/*footer*/
+footer
+{
+    font-size: 24px;
+
+    width: 100%;
+    height: 160px;
+
+    background-color: #f7f7f7;
+}
+footer div
+{
+    width: 220px;
+    margin: 0 auto;
+    padding-top: 44px;
+    padding-bottom: 4px;
+}
+footer div a
+{
+    color: #333;
+}
+footer p
+{
+    width: 100%;
+
+    text-align: center;
+
+    color: #999;
+}
+.floatPic
+{
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    height: 120px;
+
+    background: url(../img/floatImg.jpg) center center no-repeat;
+    background-size: 100%;
+}
+.floatPic span
+{
+    font-size: 30px;
+    line-height: 120px;
+
+    position: absolute;
+    right: 4%;
+
+    color: #fff;
+}
+
+/******list页面样式******/
+header .back,
+header .home
+{
+    line-height: 80px;
+
+    float: left;
+
+    width: 80px;
+    height: 80px;
+
+    text-align: center;
+}
+header .home
+{
+    float: right;
+}
+div.mt0
+{
+    margin-top: 0;
+}
+.summury .author
+{
+    font-size: 24px;
+
+    float: right;
+
+    color: #999;
+}
+.content div.bt1
+{
+    padding-bottom: 40px;
+
+    border-bottom: solid 1px #ccc;
+}
+div.pagination
+{
+    font-size: 28px;
+    line-height: 76px;
+
+    width: 444px;
+    height: 76px;
+    margin: 60px auto;
+
+    text-align: center;
+}
+.pagination span
+{
+    float: left;
+
+    width: 200px;
+    height: 76px;
+
+    border: solid 1px #ccc;
+}
+.pagination span.pre
+{
+    margin-right: 20px;
+}
+.pagination span.next
+{
+    margin-left: 20px;
+
+    color: #129fe5;
+}
+.banner2 .pic li
+{
+    background: #7ed39c url(../img/banner2.jpg) center center no-repeat;
+    background-size: 100%;
+}
+/******搜索列表******/
+.keywords
+{
+    font-size: 32px;
+    line-height: 80px;
+
+    width: 92%;
+    height: 80px;
+    padding: 0 4%;
+
+    color: #333;
+    background-color: #f7f7f7;
+}
+.searchlist
+{
+    width: 92%;
+    padding: 0 4%;
+}
+.searchitem
+{
+    font-size: 30px;
+
+    padding: 40px 0;
+
+    color: #666;
+    border-bottom: solid 1px #ccc;
+}
+.searchResultTitle
+{
+    color: #333;
+}
+.theWord
+{
+    color: #129fe5;
+}
+.type
+{
+    font-size: 28px;
+
+    float: right;
+
+    color: #999;
+}
+/******单书介绍******/
+.content .book div.booksummury p
+{
+    font-size: 28px;
+
+    height: auto;
+}
+.content .book div.booksummury h3
+{
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+.content .book div.booksummury p.latest span
+{
+    color: #129fe5;
+}
+.about
+{
+    width: 92%;
+    margin-bottom: 40px;
+    padding: 0 4%;
+}
+.about h3
+{
+    font-size: 32px;
+
+    height: 52px;
+
+    color: #333;
+}
+.about p
+{
+    font-size: 28px;
+
+    display: -webkit-box;
+    overflow: hidden;
+
+    height: 206px;
+
+    color: #666;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+.chapters
+{
+    font-size: 32px;
+
+    width: 92%;
+    margin: 0 0 40px;
+    padding: 0 4%;
+
+    color: #333;
+}
+.chapters li
+{
+    display: block;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.chapters .newC,
+.chapters .allC
+{
+    padding: 40px 0;
+
+    border-bottom: solid 1px #ccc;
+}
+.chapters .newC li
+{
+    height: 52px;
+}
+.chapters .allC li
+{
+    height: 52px;
+}
+.pager
+{
+    width: 92%;
+    padding: 0 4% 40px;
+}
+.pager li
+{
+    font-size: 28px;
+    line-height: 76px;
+
+    float: left;
+
+    text-align: center;
+
+    color: #129fe5;
+}
+.pager .pre
+{
+    width: 20%;
+    height: 76px;
+    margin-right: 4%;
+
+    color: #999;
+    border: solid 1px #ccc;
+}
+.pager .next
+{
+    width: 20%;
+    height: 76px;
+    margin-right: 4%;
+
+    border: solid 1px #ccc;
+}
+.pager .last
+{
+    width: 20%;
+    height: 76px;
+    margin-right: 4%;
+
+    border: solid 1px #ccc;
+}
+.pager .jumpto
+{
+    width: 26%;
+    height: 76px;
+
+    border: solid 1px #ccc;
+}
+.pager .jumpto input
+{
+    font-size: 28px;
+
+    float: left;
+
+    width: 40%;
+    height: 36px;
+    padding: 20px 10%;
+}
+.pager .jumpto span
+{
+    float: left;
+
+    width: 40%;
+
+    background-color: #e5e5e5;
+}
+.whichPage
+{
+    font-size: 26px;
+
+    padding-bottom: 20px;
+
+    text-align: center;
+
+    color: #999;
+}
+.whichPage .curPage
+{
+    color: #129fe5;
+}
+/*单章内容页*/
+header.reading
+{
+    font-size: 32px;
+    font-weight: normal;
+
+    text-align: left;
+}
+p.exactC
+{
+    font-size: 32px;
+    font-weight: bold;
+
+    padding: 40px 0 0;
+
+    text-align: center;
+
+    color: #333;
+}
+ul#chapterNav
+{
+    margin-top: 40px;
+}
+ul#chapterNav li
+{
+    width: 30%;
+}
+ul#chapterNav li.next
+{
+    margin-right: 0;
+}
+ul#chapterNav li.mulu
+{
+    color: #333;
+}
+.detailContent
+{
+    width: 92%;
+    /*height: 640px;*/
+    padding: 40px 4%;
+
+    font-size: 32px;
+    text-indent: 2em;
+    color: #333;
+    line-height: 1.8;
+
+    background-color: #f5f6ee;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>分类列表</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    </head>
+<body>
+    <!-- head -->
+    <header class="clearfix">
+	    <span class="back"><a onclick="javascript:history.go(-1);"><img src="/static/img/back.png"></a></span>
+	    {{ category.name }}
+        <span class="home"><a href="/"><img src="/static/img/home.png"></a></span>
+    </header>
+    <!-- banner -->
+    <div class="banner mt0">
+    	<ul class="pic clearfix">
+    		<li></li>
+    	</ul>
+    </div>
+    <!-- 列表 -->
+	<div class="content">
+        {% for book in books %}
+            <div class="book clearfix bt1">
+                <div class="pic">
+                    <img src="{{ book.avatar_url }}">
+                </div>
+                <div class="summury">
+                    <h3 class="clearfix"><a href="/book/{{ book.id }}/">{{ book.title }}</a>
+                        <span class="author">作者：{{ book.author }}</span></h3>
+                    <p>{{ book.info }}</p>
+                </div>
+            </div>
+        {% endfor %}
+	</div>
+    <!-- 翻页 -->
+	<div class="pagination clearfix">
+        {% if has_prev_page %}
+		    <span class="pre"><a href="/book/category/{{ category.id }}/?page={{ prev_page }}">上一页</a></span>
+		{% endif %}
+        {% if has_next_page %}
+            <span class="next"><a href="/book/category/{{ category.id }}/?page={{ next_page }}">下一页</a></span>
+        {% endif %}
+	</div>
+    <!-- banner2 -->
+    <div class="banner banner2 mt0">
+    	<ul class="pic clearfix">
+    		<li></li>
+    	</ul>
+    </div>
+    <!-- foot -->
+	<footer>
+		<div>
+			<a href="/">网站首页</a> |
+            <a href="javascript:scroll(0,0)">返回顶部</a>
+		</div>
+		<p>免费小说大全 - 精选网络各类免费小说</p>
+	</footer>
+</body>
+</html>

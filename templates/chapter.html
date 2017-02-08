@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>单章内容页</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    </head>
+    <body>
+        <!-- head -->
+        <header class="clearfix reading">
+            正在阅读：{{ book.category }} - {{ book.title }}
+        </header>
+        <!-- reading -->
+        <p class="exactC">{{ chapter.title }}</p>
+        <!-- 翻页 -->
+        <ul class="clearfix pager" id="chapterNav">
+            {% if previous_chapter %}
+                <li class="pre"><a href="/book/{{ book.id }}/chapter/{{ previous_chapter.id }}/">上一章</a></li>
+            {% endif %}
+            <li class="last mulu"><a href="/book/{{ book.id }}/">目录</a></li>
+            {% if next_chapter %}
+                <li class="next"><a href="/book/{{ book.id }}/chapter/{{ next_chapter.id }}/">下一章</a></li>
+            {% endif %}
+        </ul>
+        <!-- banner -->
+        <div class="banner mt0">
+            <ul class="pic clearfix">
+                <li></li>
+            </ul>
+        </div>
+        <!-- 小说内容 -->
+        <div class="detailContent">
+            {{ chapter.content|safe }}
+        </div>
+        <!-- banner2 -->
+        <div class="banner banner2 mt0">
+            <ul class="pic clearfix">
+                <li></li>
+            </ul>
+        </div>
+        <!-- 翻页 -->
+        <ul class="clearfix pager" id="chapterNav">
+            {% if previous_chapter %}
+                <li class="pre"><a href="/book/{{ book.id }}/chapter/{{ previous_chapter.id }}/">上一章</a></li>
+            {% endif %}
+            <li class="last mulu"><a href="/book/{{ book.id }}/">目录</a></li>
+            {% if next_chapter %}
+                <li class="next"><a href="/book/{{ book.id }}/chapter/{{ next_chapter.id }}/">下一章</a></li>
+            {% endif %}
+        </ul>
+        <!-- foot -->
+        <footer>
+            <div>
+                <a href="/">网站首页</a> |
+                <a href="javascript:scroll(0,0)">返回顶部</a>
+            </div>
+            <p>免费小说大全 - 精选网络各类免费小说</p>
+        </footer>
+    </body>
+</html>
